@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.Button
 import android.os.Looper
-import android.util.Log // Import for logging
+import android.util.Log 
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             Log.d("MainActivity", "postDelayed: Starting Home activity")
             val intent = Intent(this, home::class.java)
-            // Start the Home activity
             startActivity(intent)
             finish()
         }, 2000)
@@ -46,10 +45,8 @@ class home : AppCompatActivity() {
         }
         Log.d("HomeActivity", "onCreate: HomeActivity started")
 
-        // Find the button by its ID
         val orderButton: Button = findViewById(R.id.order)
 
-        // Set an onClickListener for the button
         orderButton.setOnClickListener {
             Log.d("HomeActivity", "orderButton: Starting MapActivity")
             val intent = Intent(this, MapActivity::class.java)
